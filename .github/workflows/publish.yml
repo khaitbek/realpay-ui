@@ -8,20 +8,22 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Read Node version
-        id: node_version
-        run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
-      - name: Set Node version
-        uses: actions/setup-node@v2
+    permissions: 
+        contents: write
+        pull-requests: write
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: '${{ steps.node_version.outputs.NVMRC }}'
-          registry-url: 'https://registry.npmjs.org'
+            version: 8
+      - uses: actions/setup-node@v3 
+        with:
+            node-version: 20
+            cache: "pnpm"
+            registry-url: "https://registry.npmjs.org"
 
-      - name: Install dependencies and publish
+      - run: pnpm install --no-frozen-lockfile
+      - name: Create Release Pull Request or Publish
         run: pnpm install --no-frozen-lockfile && pnpm publish:next
         env:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
