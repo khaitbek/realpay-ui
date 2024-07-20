@@ -23,5 +23,8 @@
     "license": "MIT",
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "tailwindcss-animate": "1.0.7"
     }
 }
