@@ -11,6 +11,10 @@
                 "types": "./dist/index.d.ts",
                 "default": "./dist/index.js"
             }
+        },
+        "./src/*.css": {
+            "import": "./src/*.css",
+            "require": "./src/*.css"
         }
     },
     "source": "./src/index.ts",
