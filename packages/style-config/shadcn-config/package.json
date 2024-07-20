@@ -20,7 +20,6 @@
     "files": [
         "dist"
     ],
-    "private": true,
     "license": "MIT",
     "publishConfig": {
         "access": "public"
