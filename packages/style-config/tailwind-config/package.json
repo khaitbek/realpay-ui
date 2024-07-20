@@ -1,6 +1,6 @@
 {
     "name": "@hayitbek/realpay-tailwind-config",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "exports": {
         ".": {
             "import": {
