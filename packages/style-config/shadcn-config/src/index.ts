@@ -1,1 +1,1 @@
-export { default } from "./react.config";
+export { config } from "./config";

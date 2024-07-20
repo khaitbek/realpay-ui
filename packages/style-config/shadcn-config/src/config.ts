@@ -1,4 +1,4 @@
-export default {
+export const config = {
     "$schema": "https://ui.shadcn.com/schema.json",
     "style": "default",
     "rsc": false,

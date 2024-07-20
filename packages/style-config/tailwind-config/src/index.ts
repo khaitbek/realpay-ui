@@ -1,2 +1,2 @@
-export * from "./tailwind.config";
+export { config } from "./config";
 // export * from "./global.css"
