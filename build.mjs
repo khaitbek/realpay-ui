@@ -46,3 +46,4 @@ async function build(path) {
 }
 
 globSync('packages/react/*').forEach(build);
+globSync('packages/style-config/*').forEach(build)
