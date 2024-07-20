@@ -1,4 +1,4 @@
-{
+export default {
     "$schema": "https://ui.shadcn.com/schema.json",
     "style": "default",
     "rsc": false,
