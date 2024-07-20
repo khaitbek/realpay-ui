@@ -19,7 +19,7 @@
     "types": "./dist/index.d.ts",
     "files": [
         "dist",
-        "global.css"
+        "./src/global.css"
     ],
     "license": "MIT",
     "publishConfig": {
