@@ -1,19 +1,30 @@
 {
+  "version": "0.0.1",
   "name": "realpay-ui",
   "private": true,
   "scripts": {
-    "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "build": "node build.mjs",
+    "publish:stable": "pnpm build && pnpm recursive publish --access public --no-git-checks",
+    "publish:next": "pnpm bump:next && pnpm clean && pnpm build && pnpm workspaces foreach -pvW npm publish --tolerate-republish --access public --tag next"
   },
   "devDependencies": {
+    "esbuild": "^0.23.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
     "prettier": "^3.2.5",
+    "replace-in-files": "^3.0.0",
+    "tsup": "^8.2.0",
     "turbo": "^2.0.7",
     "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "@hayitbek/realpay-utils": "^0.4.0"
   }
 }
