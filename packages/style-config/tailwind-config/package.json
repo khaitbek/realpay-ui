@@ -15,6 +15,10 @@
         "./src/*.css": {
             "import": "./src/*.css",
             "require": "./src/*.css"
+        },
+        "./src/global.css": {
+            "import": "./src/global.css",
+            "require": "./src/global.css"
         }
     },
     "source": "./src/index.ts",

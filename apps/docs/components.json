@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "@hayitbek/realpay-shadcn-config"
+  ],
+  "rsc": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "@hayitbek/realpay-tailwind-config/src/global.css"
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  }
+}
