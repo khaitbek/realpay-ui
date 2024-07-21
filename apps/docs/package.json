@@ -25,6 +25,7 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20",
     "@types/react": "^18",

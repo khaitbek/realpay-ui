@@ -15,6 +15,7 @@ async function build(path) {
     format: 'cjs',
     target: 'es2022',
     outdir: dist,
+
   };
 
   await esbuild.build(esbuildConfig);
@@ -37,10 +38,12 @@ async function build(path) {
   await tsup.build({
     entry: [file],
     format: ['cjs', 'esm'],
-    dts: { only: true },
+    // dts: true,
     outDir: dist,
     silent: true,
     external: [/realpay-ui\/.+/],
+    clean: true,
+    experimentalDts:true
   });
   console.log(`Built ${path}/dist/index.d.ts`);
 }
