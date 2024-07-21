@@ -8,7 +8,7 @@ async function build(path) {
 
   const esbuildConfig = {
     entryPoints: [file],
-    external: ['realpay-ui/*'],
+    external: ['@radix-ui/*'],
     packages: 'external',
     bundle: true,
     sourcemap: true,
@@ -25,6 +25,7 @@ async function build(path) {
     ...esbuildConfig,
     format: 'esm',
     outExtension: { '.js': '.mjs' },
+    
   });
   console.log(`Built ${path}/dist/index.mjs`);
 
@@ -41,9 +42,10 @@ async function build(path) {
     // dts: true,
     outDir: dist,
     silent: true,
-    external: [/realpay-ui\/.+/],
+    external: [/@radix-ui\/.+/],
     clean: true,
-    experimentalDts:true
+    dts: true
+    
   });
   console.log(`Built ${path}/dist/index.d.ts`);
 }
