@@ -1,0 +1,24 @@
+---
+title: Rust dasturlash tilining tarixi
+description: Har bir dasturlash tili o'zining qiziqarli tarixiga ega bo'lganidek, Rust dasturlash tili ham o'ziga xos tarixga ega
+---
+
+**Dasturlash olamida har bir yangi loyiha qandaydur muammoga yechim topish uchun yaratiladi**. 
+
+Rust dasturlash tilining kelib chiqishi haqida ham shunday deyish mumkin. 2006-yil Mozilla kompaniyasida ishlaydigan dasturchi Graydon Hoare uyiga qaytayotgandi. U ko'p qavatli uylarning 21-qavatida yashardi va u doimiy ravish liftdan foydalanardi. Uyga qaytganida esa, lift ishdan chiqqanidan xabar topdi. Bu birinchisi emas edi. Hoare 21-qavatga zinalar orqali chiqishga majbur bo'ldi va taxmin qilib ulgurganingizdek, qattiq jahli chiqa boshladi. "Biz qanday dasturchilarmizki, hattoki bitta _liftni_ ham eplab ishlaydigan qilib qo'ya olmaymiz" degandi o'shanda u. Hoare bu muammolarning barchasi liftga yozilgan dasturda xotira bilan ishlash bo'yicha xatoliklari borligi tufayli yuzaga chiqadi deb bilardi. Lift va shunga o'xshash qurilmalardagi dasturlar odatda C/C++ dasturlash tillarida yoziladi. C/C++ da yozilgan ilovalar tez ishlashi turgan gap, ammo xotira bilan ishlash bu dasturlash tillari bilan doim muammo bo'lib kelgan. Sababi, bu dasturlash tillarida siz xotira bilan ishlashda juda osonlik bilan, o'zingiz bilmagan holda katastrofik xatolarga yo'l qo'yishingiz mumkin. Microsoft o'zining kodlaridagi xatolarning qariyb 70 foizi aynan xotira bilan bog'liq xatoliklar ekanini ta'kidlaydi
+
+Ko'pchiligimiz 21-qavatga liftda chiqa olmasak, bir-ikki kun xafa bo'lib, jahlimiz chiqib yuradi va keyin liftni tuzatishadi va biz sodir bo'lgan voqeani unutamiz. Ammo Hoare chidab turolmadi, unutolmadi. U bu muammoni yechish uchun yangi dasturlash tili yozishga kirishdi. Va u bu dasturlash tilini **Rust** deb nomladi.
+
+Hozirgi kunga kelib esa Rust dasturlash olamidagi eng yoqimtoy dasturlash tiliga aylandi. Rust ketma-ket Stackoverflowda dasturchilarning eng sevimli dasturlash tili deb topildi. Microsoft, Amazon kabi kompaniyalar Rustni kelajak sifatida ko'ryapti. Discord, Dropbox va Cloudflare kabi tizimlar hozirda Rust dasturlash tilidan foydalanadi. 
+
+Hoare Mozilla kompaniyasida ishlar edi. Rustni esa ishdan bo'sh vaqtlarida rivojlantirishda davom etdi. U Rustni hamkasblariga tanishtirishni boshladi va ikki xil reaksiya oldi: ba'zilar Rustni ko'rib hayratlanishdi, ba'zilar esa negativ fikr bildirishdi. Ammo, Mozilladagi "kattaroq akaxonlar" Rustni kelajak sifatida ko'rishdi. 
+
+2009-yilda Mozilla rasman Rustni qo'llab-quvvatlashni boshladi. Shu yili Rust open-sourcega aylantirildi. 2010-yildan boshlab esa, Rust dunyo dasturchilari e'tiborini torta boshladi. 2013-yilda esa Hoare Rust loyihasini to'laligicha Mozillaga topshirdi, xuddi shu yili esa, Rust o'zining **garbage collectoridan** voz kechdi. 2015-yil 15-mayda esa, uzoq kutilgan onlar keldi - Rustning 1.0 versiyasi ommaga e'lon qilindi. 
+
+2016-yilda esa Mozilla kompaniyasi Rustda yozilgan Servo nomli qidiruv tizimini e'lon qildi. Keyingi yili esa, Firefox brauzerining CSS render qiluvchi va MP4 fayllar bilan ishlashga javob beradigan qismlari Rustda yozib chiqildi. 2020-yilda esa Dropbox o'zining bir nechta qurilmalar o'rtasida faylllarni saqlash imkonini beruvchi Pythonda yozilgan kodlarini Rustda yozib chiqdi. 2020-yilda esa Discord o'zining Go dasturlash tizimida yozilgan tizimini Rust dasturlash tilida qayta yozib chiqdi va natijada, tizim 10 barobar tez ishlashni boshladi. 
+
+Izlanishlar shuni ko'rsatdiki, Rust hattoki Javada yozilgan ilovalardan ko'ra 2 barobar kamroq elektr energiyasi sarflanishiga sabab bo'lar ekan. 
+
+Bugungi kunda esa Windows va Linux kernellarida ham Rust dasturlash tili sinovdan o'tkazilishi boshlangan. Linus Torvald kelgusi yillarda Rust haqida ko'plab izlanishlar olib borilishi va bosqichma-bosqich migratsiya bo'lishi mumkinligi haqida aytib o'tgan bo'lsa, Microsoft allaqachon Windows 11 uchun Rust ishlatishni boshlagani haqida ma'lumotlar bor. 
+
+Rustning ushbu qiziq tarixi ko'rsatadiki, ushbu dasturlash tilini ancha buyuk kelajak kutmoqda. Oldinlari C/C++ da yozilgan tizimlar balkim o'zgarishsiz qolar, balkim Rustda qayta yozib chiqilar, lekin yangi ishlab chiqiladigan tizimlar bundan buyog'iga Rustda yozilishi haqiqatga yaqin. Chunki, hozirgi davr odamlari 21-qavatga zinapoyada chiqishga toqat qila olmaydi :)

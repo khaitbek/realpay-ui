@@ -12,6 +12,7 @@
     "@hayitbek/realpay-shadcn-config": "workspace:*",
     "@hayitbek/realpay-tailwind-config": "workspace:*",
     "@hayitbek/realpay-ui-button": "workspace:*",
+    "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "fumadocs-core": "^11.3.2",

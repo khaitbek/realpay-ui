@@ -1,4 +1,5 @@
-import "@hayitbek/realpay-tailwind-config/src/global.css";
+// import "@hayitbek/realpay-tailwind-config/src/global.css";
+import { RootProvider } from 'fumadocs-ui/provider';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <RootProvider>
+          {children}
+          </RootProvider>
+          </body>
     </html>
   );
 }

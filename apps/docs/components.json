@@ -1,14 +1,17 @@
 {
-  "extends": [
-    "@hayitbek/realpay-shadcn-config"
-  ],
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
   "rsc": true,
+  "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "@hayitbek/realpay-tailwind-config/src/global.css"
+    "config": "tailwind.config.js",
+    "css": "./src/app/globals.css",
+    "baseColor": "stone",
+    "cssVariables": true,
+    "prefix": ""
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/lib/utils"
+    "utils": "@/lib"
   }
 }
