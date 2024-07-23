@@ -22,7 +22,7 @@ export default function RootLayout({
         <RootProvider>
           {children}
           </RootProvider>
-          </body>
+        </body>
     </html>
   );
 }
