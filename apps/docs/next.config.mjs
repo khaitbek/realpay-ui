@@ -17,7 +17,7 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages:[]
+  transpilePackages:["@hayitbek/realpay-ui-button"]
 };
 
 export default withMDX(config);
