@@ -1,8 +1,8 @@
 import { config } from '@hayitbek/realpay-tailwind-config';
 import twTypographyPlugin from "@tailwindcss/typography";
 
-const twConfig= {
-presets:[config],
+const twConfig = {
+  presets: [config],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -11,10 +11,21 @@ presets:[config],
     '../../packages/react/*/src/*.tsx',
     './content/**/*.{md,mdx}',
     './node_modules/fumadocs-ui/dist/**/*.js',
-	],
-   plugins:[
+  ],
+  plugins: [
     twTypographyPlugin
-   ] 
-} 
+  ],
+  extends: {
+    keyframes: {
+      "shine": {
+        from: { backgroundPosition: '200% 0' },
+        to: { backgroundPosition: '-200% 0' },
+      },
+    },
+    animation: {
+      "shine": "shine 8s ease-in-out infinite",
+    },
+  }
+}
 
 export default twConfig
