@@ -1,3 +1,5 @@
+"use client"
+
 import { classnames as cn } from "@hayitbek/realpay-utils"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -9,15 +11,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 ring-primary",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-input dark:bg-background dark:hover:bg-accent dark:hover:text-accent-foreground",
+          "border border-slate-200 bg-white hover:bg-slate-100 ring-slate-900 hover:text-slate-900 dark:border-input dark:bg-background dark:hover:bg-accent dark:hover:text-accent-foreground ring-accent",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 ring-secondary",
+        ghost: "hover:bg-accent hover:text-accent-foreground ring-accent",
+        link: "text-primary underline-offset-4 hover:underline ring-primary",
       },
       size: {
         default: "h-10 px-4 py-2",
