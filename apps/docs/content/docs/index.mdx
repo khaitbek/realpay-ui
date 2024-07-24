@@ -2,9 +2,10 @@
 title: Button 
 description: Displays a button or a component that looks like a button 
 ---
-
 import { Button } from "@hayitbek/realpay-ui-button"
 import { Callout } from 'fumadocs-ui/components/callout'
+import { User } from "lucide-react"
+import Link from "next/link"
 
 <Tabs items={["preview","code"]}>
 <Tab value="preview">
@@ -64,19 +65,41 @@ import {Button} from "@hayitbek/realpay-ui-button"
 
 ### Link
 You can use the buttonVariants helper to create a link that looks like a button.
-
+<Tabs items={["Preview","Code"]}>
+<Tab value="Code">
 ```tsx
-import { buttonVariants } from "@/components/ui/button"
-<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
+import {Button} from "@hayitbek/realpay-ui-button";
+
+export const LinkThatLooksLikeAButton = () => {
+    return <Button variant="link">
+   This a link (button) 
+    </Button>
+}
 ```
+</Tab>
+<Tab value="Preview">
+<Button variant="link">
+   This a link (button) 
+    </Button>
+</Tab>
+</Tabs>
 
 Alternatively, you can set the asChild parameter and nest the link component.
 
+<Tabs items={["Preview","Code"]}>
+<Tab value="Code">
 ```tsx
 <Button asChild>
   <Link href="/login">Login</Link>
 </Button>
 ```
+</Tab>
+<Tab value="Preview">
+<Button asChild>
+  <Link href="/login">Login</Link>
+</Button>
+</Tab>
+</Tabs>
 
 ### Examples
 #### Primary
@@ -138,6 +161,48 @@ Alternatively, you can set the asChild parameter and nest the link component.
 
     export const GhostButtonDemo = () => {
         return <Button>Ghost button</Button>
+    }
+   ``` 
+</Tab> 
+</Tabs>
+
+
+#### Loading 
+<Tabs items={["Preview","Code"]}>
+<Tab value="Preview">
+    <Button isLoading> Loading button</Button>
+</Tab> 
+<Tab value="Code">
+   ```tsx
+    import {Button} from "@hayitbek/realpay-ui-button"
+
+    export const LoadingButtonDemo = () => {
+        return <Button isLoading>Loading button</Button>
+    }
+   ``` 
+</Tab> 
+</Tabs>
+
+#### With icon 
+<Tabs items={["Preview","Code"]}>
+<Tab value="Preview">
+<div className="flex gap-2">
+    <Button icon={<User className="mr-2"/>} > Button with icon on the left</Button>
+    <Button icon={<User className="ml-2"/>} iconPosition="right" variant="secondary"> Button with icon on the right</Button>
+    </div>
+</Tab> 
+<Tab value="Code">
+   ```tsx
+    import {Button} from "@hayitbek/realpay-ui-button"
+    import {User} from "lucide-react"
+
+    export const ButtonWithIconDemo = () => {
+        return (
+       <>
+        <Button icon={<User className="mr-2" />}> Button with icon on the left</Button>
+        <Button icon={<User className="ml-2" />} iconPosition="right"> Button with icon on the right</Button> 
+       </> 
+        ) 
     }
    ``` 
 </Tab> 

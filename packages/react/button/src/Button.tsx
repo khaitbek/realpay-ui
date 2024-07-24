@@ -35,23 +35,92 @@ const buttonVariants = cva(
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  isLoading?: boolean
+  icon?: React.ReactNode
+  iconPosition?: "right" | "left"
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+  ({ className, variant, size, asChild = false, isLoading, children, icon, iconPosition = "left", ...props }, ref) => {
+    if (asChild) {
+      return (
+        <Slot ref={ref} {...props}>
+          <>
+            {React.Children.map(children as React.ReactElement, (child: React.ReactElement) => {
+              return React.cloneElement(child, {
+                className: cn(buttonVariants({ variant, size }), className),
+                children: (
+                  <>
+                    {isLoading && (
+                      <Loader className={cn('h-4 w-4 animate-spin', children && 'mr-2')} />
+                    )}
+                    {icon && iconPosition === "left" && (
+                     <>
+                    {icon} 
+                     </> 
+                    )}
+                    {child.props.children}
+                    {icon && iconPosition === "right" && (
+                     <>
+                    {icon} 
+                     </> 
+                    )}
+                  </>
+                ),
+              });
+            })}
+          </>
+        </Slot>
+      )
+    }
     return (
-      <Comp
+      <button
         className={cn(buttonVariants({ variant, size, className }))}
+        disabled={isLoading}
         ref={ref}
         {...props}
-      />
+      >
+        <>
+          {isLoading && <Loader className={cn('h-4 w-4 animate-spin', children && 'mr-2')} />}
+          {icon && iconPosition === "left" && (
+           <>
+          {icon} 
+           </> 
+          )}
+          {children}
+          {icon && iconPosition === "right" && (
+           <>
+          {icon} 
+           </> 
+          )}
+        </>
+      </button>
     )
   }
 )
 Button.displayName = "Button"
+
+const Loader = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className="lucide lucide-loader-circle"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M21 12a9 9 0 11-6.219-8.56"></path>
+    </svg>
+  )
+}
 
 export { Button, buttonVariants }
 export type {
