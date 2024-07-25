@@ -42,16 +42,12 @@ export const GoogleGeminiEffect = ({
       ref={ref}
     >
     <div className={cn("sticky top-52", className)}>
-      <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+      <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-foreground to-accent">
         {title || `Build with Aceternity UI`}
       </p>
-      <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
-        {description ||
-          `Scroll this component and see the bottom SVG come to life wow this
-        works!`}
-      </p>
+      
       {children}
-      <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
+      <div className="w-full h-[890px] -top-60 md:-top-52  flex items-center justify-center bg-red-transparent absolute ">
         <button className={buttonVariants({variant:"outline",className:"w-fit z-10"})}>
           <Link href="/docs" className="text-foreground font-semibold underline">
           Go to docs
