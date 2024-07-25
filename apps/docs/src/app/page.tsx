@@ -1,19 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
+import { GoogleGeminiEffect } from "@/components/google-gemini-effect";
 
 // import {} from "fumadocs-mdx"
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-background">
-      <h1 className="mb-4 text-2xl font-bold">
-        Assalomu alaykum. Realpay UI documentationga xush kelibsiz!
-      </h1>
-      <p className="text-muted-foreground">
-        Quyidagi link orqali, documentationni o'qishni boshlashingiz mumkin{' '}
-        <Link href="/docs" className="text-foreground font-semibold underline">
-          /docs
-        </Link>{' '}
-      </p>
+    <main className="flex flex-col items-center justify-center p-12 bg-background">
+     <GoogleGeminiEffect title="Assalomu alaykum. RealPay UI documentationga xush kelibsiz!" description="Make your React apps more beatiful with RealPay UI">
+     
+       
+      </GoogleGeminiEffect> 
     </main>
   );
 }
