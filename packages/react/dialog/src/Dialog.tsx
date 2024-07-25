@@ -123,6 +123,7 @@ const DialogCloseIcon = (props: React.ComponentProps<"svg">) => {
     )
 }
 
+const DialogClose = DialogPrimitive.DialogClose;
 
-export { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogScrollableContent, DialogTitle, DialogTrigger };
+export { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogScrollableContent, DialogTitle, DialogTrigger };
 

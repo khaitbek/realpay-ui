@@ -1,0 +1,273 @@
+---
+title: Dialog 
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert. 
+---
+
+import { Button } from "@hayitbek/realpay-ui-button";
+import * as BaseDialog from "@hayitbek/realpay-ui-dialog";
+
+<Tabs items={["preview","code"]}>
+<Tab value="preview">
+   
+<BaseDialog.Dialog>
+  <BaseDialog.DialogTrigger asChild>
+    <Button>
+      Open 
+    </Button> 
+  </BaseDialog.DialogTrigger>
+  <BaseDialog.DialogContent>
+    <BaseDialog.DialogHeader>
+      <BaseDialog.DialogTitle>Are you absolutely sure?</BaseDialog.DialogTitle>
+      <BaseDialog.DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </BaseDialog.DialogDescription>
+    </BaseDialog.DialogHeader>
+  </BaseDialog.DialogContent>
+</BaseDialog.Dialog> 
+    
+</Tab>
+<Tab value="code">
+    ```tsx
+    
+    import * as BaseDialog from "@hayitbek/realpay-ui-dialog"
+    import { Button } from "@hayitbek/realpay-ui-button"
+
+    export const DemoButton = () => {
+        return (
+          <BaseDialog.Dialog>
+            <BaseDialog.DialogTrigger asChild>
+              <Button>
+                Open 
+              </Button> 
+            </BaseDialog.DialogTrigger>
+            <BaseDialog.DialogContent>
+              <BaseDialog.DialogHeader>
+                <BaseDialog.DialogTitle>Are you absolutely sure?</BaseDialog.DialogTitle>
+                <BaseDialog.DialogDescription>
+                  This action cannot be undone. This will permanently delete your account
+                  and remove your data from our servers.
+                </BaseDialog.DialogDescription>
+              </BaseDialog.DialogHeader>
+            </BaseDialog.DialogContent>
+          </BaseDialog.Dialog>  
+        )
+    }
+    ```
+</Tab>
+</Tabs>
+
+### Installation
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    ```shell
+        npm install @hayitbek/realpay-ui-dialog
+    ```
+  </Tab>
+  <Tab value="pnpm">
+    ```shell
+        pnpm install @hayitbek/realpay-ui-dialog
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```shell
+        yarn add @hayitbek/realpay-ui-dialog
+    ```
+  </Tab>
+<Tab value="bun">
+    ```shell
+        bun add @hayitbek/realpay-ui-dialog
+    ```
+  </Tab>
+</ Tabs>
+
+### Usage
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@hayitbek/realpay-ui-dialog"
+
+// or
+
+import * as BaseDialog from "@hayitbek/realpay-ui-dialog"
+
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+
+```
+
+### Examples
+
+#### Custom close button
+<Tabs items={["Preview","Code"]}>
+<Tab value="Code">
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@hayitbek/realpay-ui-dialog"
+import { Button } from "@hayitbek/realpay-ui-dialog"
+
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+   <DialogClose>
+    <Button type="button" variant="secondary">
+      Close 
+    </Button> 
+   </DialogClose> 
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+
+```
+</Tab>
+<Tab value="Preview">
+
+<BaseDialog.Dialog>
+  <BaseDialog.DialogTrigger asChild>
+    <Button>
+   Open 
+    </Button> 
+  </BaseDialog.DialogTrigger>
+  <BaseDialog.DialogContent>
+    <BaseDialog.DialogHeader>
+      <BaseDialog.DialogTitle>Are you absolutely sure?</BaseDialog.DialogTitle>
+      <BaseDialog.DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </BaseDialog.DialogDescription>
+    </BaseDialog.DialogHeader>
+    <BaseDialog.DialogFooter>
+   <BaseDialog.DialogClose>
+    <Button type="button" variant="secondary">
+      Close 
+    </Button> 
+   </BaseDialog.DialogClose> 
+    </BaseDialog.DialogFooter>
+  </BaseDialog.DialogContent>
+</BaseDialog.Dialog>
+</Tab>
+</Tabs>
+
+
+
+#### With scrollable content 
+<Tabs items={["Preview","Code"]}>
+<Tab value="Code">
+```tsx
+import {
+  Dialog,
+  DialogScrollableContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@hayitbek/realpay-ui-dialog"
+import { Button } from "@hayitbek/realpay-ui-dialog"
+
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogScrollableContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription className="max-h-[100px] overflow-y-scroll">
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+   <DialogClose>
+    <Button type="button" variant="secondary">
+      Close 
+    </Button> 
+   </DialogClose> 
+    </DialogFooter>
+  </DialogScrollableContent>
+</Dialog>
+
+```
+</Tab>
+<Tab value="Preview">
+
+<BaseDialog.Dialog>
+  <BaseDialog.DialogTrigger asChild>
+    <Button>
+   Open 
+    </Button> 
+  </BaseDialog.DialogTrigger>
+  <BaseDialog.DialogScrollableContent>
+    <BaseDialog.DialogHeader>
+      <BaseDialog.DialogTitle>Are you absolutely sure?</BaseDialog.DialogTitle>
+      <BaseDialog.DialogDescription className="max-h-[100px] overflow-y-auto">
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </BaseDialog.DialogDescription>
+    </BaseDialog.DialogHeader>
+    <BaseDialog.DialogFooter>
+   <BaseDialog.DialogClose>
+    <Button type="button" variant="secondary">
+      Close 
+    </Button> 
+   </BaseDialog.DialogClose> 
+    </BaseDialog.DialogFooter>
+  </BaseDialog.DialogScrollableContent>
+</BaseDialog.Dialog>
+</Tab>
+</Tabs>
