@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { classnames as cn } from "@hayitbek/realpay-utils"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
-import * as React from "react"
-
+import { classnames as cn } from "@hayitbek/realpay-utils";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 ring-primary",
+        default:
+          "bg-primary text-primary-foreground hover:bg-primary/90 ring-primary",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -32,50 +32,63 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
-)
+  },
+);
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-  isLoading?: boolean
-  icon?: React.ReactNode
-  iconPosition?: "right" | "left"
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  isLoading?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: "right" | "left";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, isLoading, children, icon, iconPosition = "left", ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      isLoading,
+      children,
+      icon,
+      iconPosition = "left",
+      ...props
+    },
+    ref,
+  ) => {
     if (asChild) {
       return (
         <Slot ref={ref} {...props}>
           <>
-            {React.Children.map(children as React.ReactElement, (child: React.ReactElement) => {
-              return React.cloneElement(child, {
-                className: cn(buttonVariants({ variant, size }), className),
-                children: (
-                  <>
-                    {isLoading && (
-                      <Loader className={cn('h-4 w-4 animate-spin', children && 'mr-2')} />
-                    )}
-                    {icon && iconPosition === "left" && (
-                     <>
-                    {icon} 
-                     </> 
-                    )}
-                    {child.props.children}
-                    {icon && iconPosition === "right" && (
-                     <>
-                    {icon} 
-                     </> 
-                    )}
-                  </>
-                ),
-              });
-            })}
+            {React.Children.map(
+              children as React.ReactElement,
+              (child: React.ReactElement) => {
+                return React.cloneElement(child, {
+                  className: cn(buttonVariants({ variant, size }), className),
+                  children: (
+                    <>
+                      {isLoading && (
+                        <Loader
+                          className={cn(
+                            "h-4 w-4 animate-spin",
+                            children && "mr-2",
+                          )}
+                        />
+                      )}
+                      {icon && iconPosition === "left" && <>{icon}</>}
+                      {child.props.children}
+                      {icon && iconPosition === "right" && <>{icon}</>}
+                    </>
+                  ),
+                });
+              },
+            )}
           </>
         </Slot>
-      )
+      );
     }
     return (
       <button
@@ -85,24 +98,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         <>
-          {isLoading && <Loader className={cn('h-4 w-4 animate-spin', children && 'mr-2')} />}
-          {icon && iconPosition === "left" && (
-           <>
-          {icon} 
-           </> 
+          {isLoading && (
+            <Loader
+              className={cn("h-4 w-4 animate-spin", children && "mr-2")}
+            />
           )}
+          {icon && iconPosition === "left" && <>{icon}</>}
           {children}
-          {icon && iconPosition === "right" && (
-           <>
-          {icon} 
-           </> 
-          )}
+          {icon && iconPosition === "right" && <>{icon}</>}
         </>
       </button>
-    )
-  }
-)
-Button.displayName = "Button"
+    );
+  },
+);
+Button.displayName = "Button";
 
 const Loader = (props: React.ComponentProps<"svg">) => {
   return (
@@ -121,11 +130,8 @@ const Loader = (props: React.ComponentProps<"svg">) => {
     >
       <path d="M21 12a9 9 0 11-6.219-8.56"></path>
     </svg>
-  )
-}
+  );
+};
 
-export { Button, buttonVariants }
-export type {
-  ButtonProps
-}
-
+export { Button, buttonVariants };
+export type { ButtonProps };
