@@ -1,35 +1,35 @@
 {
-    "name": "@hayitbek/realpay-tailwind-config",
-    "version": "1.0.7",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./dist/index.d.ts",
-                "default": "./dist/index.mjs"
-            },
-            "require": {
-                "types": "./dist/index.d.ts",
-                "default": "./dist/index.js"
-            }
-        },
-        "./src/global.css": {
-            "import": "./src/global.css",
-            "require": "./src/global.css"
-        }
+  "name": "@hayitbek/realpay-tailwind-config",
+  "version": "1.0.8",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
-    "source": "./src/index.ts",
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "files": [
-        "dist",
-        "./src/global.css"
-    ],
-    "license": "MIT",
-    "publishConfig": {
-        "access": "public"
-    },
-    "dependencies": {
-        "tailwindcss-animate": "1.0.7"
+    "./src/global.css": {
+      "import": "./src/global.css",
+      "require": "./src/global.css"
     }
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "./src/global.css"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "tailwindcss-animate": "1.0.7"
+  }
 }
