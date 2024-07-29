@@ -1,12 +1,12 @@
-import twAnimate from "tailwindcss-animate"
+import twAnimate from "tailwindcss-animate";
 
 export const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -35,6 +35,10 @@ export const config = {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -75,4 +79,4 @@ export const config = {
     },
   },
   plugins: [twAnimate],
-}
+};
