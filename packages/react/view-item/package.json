@@ -1,6 +1,6 @@
 {
   "name": "@hayitbek/realpay-ui-view-item",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "exports": {
     ".": {
       "import": {

@@ -41,12 +41,12 @@ export const BaseViewItem = (props: BaseViewItemProps) => {
         containerClassname,
       )}
     >
-      <p className={cn("text-greyscale600 font-medium", labelClassname)}>
+      <p className={cn("text-[#868686] text-sm leading-4", labelClassname)}>
         {label}
       </p>
       <p
         className={cn(
-          "text-mainBlackTextColor font-bold w-1/2 text-end break-all",
+          "text-black font-medium text-sm w-1/2 text-end break-all",
           valueClassname,
         )}
       >
