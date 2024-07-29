@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { classnames as cn } from "@hayitbek/realpay-utils";
 
 // types
-export interface BaseViewItemProps {
+export interface ViewItemProps {
   label: string;
   value: ReactNode;
   containerClassname?: string;
@@ -15,7 +15,7 @@ export interface BaseViewItemProps {
   isLastElement?: boolean;
 }
 
-export const BaseViewItem = (props: BaseViewItemProps) => {
+export const ViewItem = (props: ViewItemProps) => {
   const {
     label,
     value,
@@ -36,8 +36,8 @@ export const BaseViewItem = (props: BaseViewItemProps) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-between pb-2",
-        !isLastElement && "border-b border-gray-200",
+        "flex items-center justify-between py-2",
+        !isLastElement && "border-b border-[#F4F4F4]",
         containerClassname,
       )}
     >

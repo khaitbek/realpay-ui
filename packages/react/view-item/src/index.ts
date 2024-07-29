@@ -1,3 +1,3 @@
-export { BaseViewItem } from "./ViewItem";
+export { ViewItem } from "./ViewItem";
 
-export type { BaseViewItemProps } from "./ViewItem";
+export type { ViewItemProps } from "./ViewItem";
