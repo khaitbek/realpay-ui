@@ -1,23 +1,26 @@
-import { rehypeCode, remarkHeading } from 'fumadocs-core/mdx-plugins';
-import { remarkInstall } from 'fumadocs-docgen';
-import createMDX from 'fumadocs-mdx/config';
+import createMDX from "fumadocs-mdx/config";
 
 const withMDX = createMDX({
-  mdxOptions:{
-    remarkPlugins:[
-      remarkInstall,
-      remarkHeading
-    ],
-    rehypePlugins:[
-      [rehypeCode]
-    ]    
-  }
+  mdxOptions: {
+    // remarkPlugins: [remarkInstall(), remarkHeading],
+    // rehypePlugins: [
+    //   [
+    //     rehypeCode({
+    //       themes: ["poimandres", "github-dark-default"],
+    //       defaultLanguage: "typescript",
+    //     }),
+    //   ],
+    // ],
+    rehypeCodeOptions: {
+      mergeWhitespaces: true,
+    },
+  },
 });
 
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages:["@hayitbek/realpay-ui-button"]
+  transpilePackages: ["@hayitbek/realpay-ui-button"],
 };
 
 export default withMDX(config);

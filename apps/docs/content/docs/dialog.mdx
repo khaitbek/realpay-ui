@@ -1,6 +1,6 @@
 ---
-title: Dialog 
-description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert. 
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 ---
 
 import { Button } from "@hayitbek/realpay-ui-button";
@@ -28,7 +28,7 @@ import * as BaseDialog from "@hayitbek/realpay-ui-dialog";
     
 </Tab>
 <Tab value="code">
-    ```tsx
+    ```typescript
     
     import * as BaseDialog from "@hayitbek/realpay-ui-dialog"
     import { Button } from "@hayitbek/realpay-ui-button"
@@ -38,8 +38,8 @@ import * as BaseDialog from "@hayitbek/realpay-ui-dialog";
           <BaseDialog.Dialog>
             <BaseDialog.DialogTrigger asChild>
               <Button>
-                Open 
-              </Button> 
+                Open
+              </Button>
             </BaseDialog.DialogTrigger>
             <BaseDialog.DialogContent>
               <BaseDialog.DialogHeader>
@@ -50,39 +50,26 @@ import * as BaseDialog from "@hayitbek/realpay-ui-dialog";
                 </BaseDialog.DialogDescription>
               </BaseDialog.DialogHeader>
             </BaseDialog.DialogContent>
-          </BaseDialog.Dialog>  
+          </BaseDialog.Dialog>
         )
     }
     ```
+
 </Tab>
 </Tabs>
 
 ### Installation
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-  <Tab value="npm">
-    ```shell
-        npm install @hayitbek/realpay-ui-dialog
-    ```
-  </Tab>
-  <Tab value="pnpm">
-    ```shell
-        pnpm install @hayitbek/realpay-ui-dialog
-    ```
-  </Tab>
-  <Tab value="yarn">
-    ```shell
-        yarn add @hayitbek/realpay-ui-dialog
-    ```
-  </Tab>
-<Tab value="bun">
-    ```shell
-        bun add @hayitbek/realpay-ui-dialog
-    ```
-  </Tab>
-</ Tabs>
+
+<Tabs items={["npm", "pnpm", "yarn", "bun"]}>
+  <Tab value="npm">```shell npm install @hayitbek/realpay-ui-dialog ```</Tab>
+  <Tab value="pnpm">```shell pnpm install @hayitbek/realpay-ui-dialog ```</Tab>
+  <Tab value="yarn">```shell yarn add @hayitbek/realpay-ui-dialog ```</Tab>
+  <Tab value="bun">```shell bun add @hayitbek/realpay-ui-dialog ```</Tab>
+</Tabs>
 
 ### Usage
-```tsx
+
+```typescript
 import {
   Dialog,
   DialogContent,
@@ -90,15 +77,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@hayitbek/realpay-ui-dialog"
+} from "@hayitbek/realpay-ui-dialog";
 
 // or
 
-import * as BaseDialog from "@hayitbek/realpay-ui-dialog"
-
+import * as BaseDialog from "@hayitbek/realpay-ui-dialog";
 ```
 
-```tsx
+```typescript
 <Dialog>
   <DialogTrigger>Open</DialogTrigger>
   <DialogContent>
@@ -111,15 +97,16 @@ import * as BaseDialog from "@hayitbek/realpay-ui-dialog"
     </DialogHeader>
   </DialogContent>
 </Dialog>
-
 ```
 
 ### Examples
 
 #### Custom close button
+
 <Tabs items={["Preview","Code"]}>
 <Tab value="Code">
-```tsx
+
+```typescript
 import {
   Dialog,
   DialogContent,
@@ -143,14 +130,15 @@ import { Button } from "@hayitbek/realpay-ui-dialog"
     <DialogFooter>
    <DialogClose>
     <Button type="button" variant="secondary">
-      Close 
-    </Button> 
-   </DialogClose> 
+      Close
+    </Button>
+   </DialogClose>
     </DialogFooter>
   </DialogContent>
 </Dialog>
 
 ```
+
 </Tab>
 <Tab value="Preview">
 
@@ -180,12 +168,11 @@ import { Button } from "@hayitbek/realpay-ui-dialog"
 </Tab>
 </Tabs>
 
+#### With scrollable content
 
-
-#### With scrollable content 
 <Tabs items={["Preview","Code"]}>
 <Tab value="Code">
-```tsx
+```typescript
 import {
   Dialog,
   DialogScrollableContent,
@@ -203,27 +190,24 @@ import { Button } from "@hayitbek/realpay-ui-dialog"
       <DialogTitle>Are you absolutely sure?</DialogTitle>
       <DialogDescription className="max-h-[100px] overflow-y-scroll">
         This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+        and remove your data from our servers. This action cannot be undone.
+        This will permanently delete your account and remove your data from our
+        servers. This action cannot be undone. This will permanently delete your
+        account and remove your data from our servers. This action cannot be
+        undone. This will permanently delete your account and remove your data
+        from our servers. This action cannot be undone. This will permanently
+        delete your account and remove your data from our servers. This action
+        cannot be undone. This will permanently delete your account and remove
+        your data from our servers. This action cannot be undone. This will
+        permanently delete your account and remove your data from our servers.
       </DialogDescription>
     </DialogHeader>
     <DialogFooter>
-   <DialogClose>
-    <Button type="button" variant="secondary">
-      Close 
-    </Button> 
-   </DialogClose> 
+      <DialogClose>
+        <Button type="button" variant="secondary">
+          Close
+        </Button>
+      </DialogClose>
     </DialogFooter>
   </DialogScrollableContent>
 </Dialog>
@@ -235,8 +219,8 @@ This action cannot be undone. This will permanently delete your account
 <BaseDialog.Dialog>
   <BaseDialog.DialogTrigger asChild>
     <Button>
-   Open 
-    </Button> 
+   Open
+    </Button>
   </BaseDialog.DialogTrigger>
   <BaseDialog.DialogScrollableContent>
     <BaseDialog.DialogHeader>
@@ -263,11 +247,12 @@ This action cannot be undone. This will permanently delete your account
     <BaseDialog.DialogFooter>
    <BaseDialog.DialogClose>
     <Button type="button" variant="secondary">
-      Close 
-    </Button> 
-   </BaseDialog.DialogClose> 
+      Close
+    </Button>
+   </BaseDialog.DialogClose>
     </BaseDialog.DialogFooter>
   </BaseDialog.DialogScrollableContent>
 </BaseDialog.Dialog>
 </Tab>
 </Tabs>
+```

@@ -1,31 +1,30 @@
-import { config } from '@hayitbek/realpay-tailwind-config';
+import { config } from "@hayitbek/realpay-tailwind-config";
 import twTypographyPlugin from "@tailwindcss/typography";
+import { createPreset } from "fumadocs-ui/tailwind-plugin";
 
 const twConfig = {
-  presets: [config],
+  presets: [config, createPreset({ addGlobalColors: true })],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-    '../../packages/react/*/src/*.tsx',
-    './content/**/*.{md,mdx}',
-    './node_modules/fumadocs-ui/dist/**/*.js',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "../../packages/react/*/src/*.tsx",
+    "./content/**/*.{md,mdx}",
+    "./node_modules/fumadocs-ui/dist/**/*.js",
   ],
-  plugins: [
-    twTypographyPlugin
-  ],
+  plugins: [twTypographyPlugin],
   extends: {
     keyframes: {
-      "shine": {
-        from: { backgroundPosition: '200% 0' },
-        to: { backgroundPosition: '-200% 0' },
+      shine: {
+        from: { backgroundPosition: "200% 0" },
+        to: { backgroundPosition: "-200% 0" },
       },
     },
     animation: {
-      "shine": "shine 8s ease-in-out infinite",
+      shine: "shine 8s ease-in-out infinite",
     },
-  }
-}
+  },
+};
 
-export default twConfig
+export default twConfig;
