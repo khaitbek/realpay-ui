@@ -12,7 +12,6 @@ export default function RootDocsLayout({ children }: { children: ReactNode }) {
       nav={{ title: "RealPay UI Documentation" }}
       sidebar={{
         components: {
-          // @ts-expect-error
           Item: CustomMenuItem,
         },
       }}
