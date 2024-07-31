@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { classnames as cn } from "@hayitbek/realpay-utils";
 
 // types
-export interface ViewItemProps {
+export type ViewItemProps<T extends React.ElementType> = {
   label: string;
   value: ReactNode;
   containerClassname?: string;
@@ -13,9 +13,12 @@ export interface ViewItemProps {
   valueClassname?: string;
   emptyPrefix?: string;
   isLastElement?: boolean;
-}
+  as?: T;
+} & Omit<React.ComponentProps<T>, "as">;
 
-export const ViewItem = (props: ViewItemProps) => {
+export const ViewItem = <T extends React.ElementType>(
+  props: ViewItemProps<T>,
+) => {
   const {
     label,
     value,
@@ -24,6 +27,7 @@ export const ViewItem = (props: ViewItemProps) => {
     valueClassname,
     emptyPrefix = "-",
     isLastElement = false,
+    as: Comp = "div",
   } = props;
 
   const validateValue = useMemo(() => {
@@ -34,7 +38,7 @@ export const ViewItem = (props: ViewItemProps) => {
   }, [value, emptyPrefix]);
 
   return (
-    <div
+    <Comp
       className={cn(
         "flex items-center justify-between py-2",
         !isLastElement && "border-b border-[#F4F4F4]",
@@ -52,6 +56,6 @@ export const ViewItem = (props: ViewItemProps) => {
       >
         {validateValue}
       </p>
-    </div>
+    </Comp>
   );
 };

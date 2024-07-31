@@ -27,22 +27,15 @@ const badgeVariants = cva(
   },
 );
 
-export type BadgeProps<T extends React.ElementType> = React.ComponentProps<T> &
-  VariantProps<typeof badgeVariants> & {
-    as: T;
-  };
+export type BadgeProps<T extends React.ElementType> = {
+  as?: T;
+} & Omit<React.ComponentProps<T>, "as"> &
+  VariantProps<typeof badgeVariants>;
 
-const Badge = <T extends React.ElementType = "div">({
-  className,
-  variant,
-  as: Component,
-  ...props
-}: BadgeProps<T>) => {
+const Badge = <T extends React.ElementType>(props: BadgeProps<T>) => {
+  const { as: Comp = "div", className, variant } = props;
   return (
-    <Component
-      className={cn(badgeVariants({ variant }), className)}
-      {...props}
-    />
+    <Comp className={cn(badgeVariants({ variant }), className)} {...props} />
   );
 };
 

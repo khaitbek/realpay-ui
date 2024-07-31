@@ -1,6 +1,6 @@
 {
   "name": "@hayitbek/realpay-ui-badge",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "exports": {
     ".": {
       "import": {
