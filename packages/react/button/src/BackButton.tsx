@@ -6,14 +6,9 @@ import { Button, type ButtonProps } from "./Button";
 
 export interface BackButtonProps extends ButtonProps {
   customIcon?: JSX.Element;
-  goBack: () => void;
 }
 
 export const BackButton = (props: BackButtonProps) => {
-  const goBackHandler = () => {
-    props.goBack();
-  };
-
   return (
     <Button
       icon={
@@ -24,7 +19,6 @@ export const BackButton = (props: BackButtonProps) => {
         )
       }
       variant="outline"
-      onClick={goBackHandler}
       {...props}
     />
   );
