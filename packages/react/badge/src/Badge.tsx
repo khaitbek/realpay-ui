@@ -19,7 +19,7 @@ const badgeVariants = cva(
           "border-transparent bg-success text-success-foreground hover: bg-sucess/80",
         outlineDestructive: "text-destructive border-destructive",
         outlineSuccess: "text-success border-success",
-        darkDestructive: "bg-[#FF00001A] text-white",
+        darkDestructive: "bg-[#75302E] text-white",
       },
       size: {
         small: "px-2.5 py-0.5",
@@ -41,8 +41,9 @@ export type BadgeProps<T extends React.ElementType> = Omit<
     as?: T;
   };
 
-const Badge = <T extends React.ElementType>(props: BadgeProps<T>) => {
-  const { as: Comp = "div", className, variant } = props;
+const Badge = <T extends React.ElementType = "div">(props: BadgeProps<T>) => {
+  const { as, className, variant } = props;
+  const Comp = as ? as : "div";
   return (
     <Comp className={cn(badgeVariants({ variant }), className)} {...props} />
   );
