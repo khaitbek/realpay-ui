@@ -6,19 +6,35 @@ import { Button, type ButtonProps } from "./Button";
 
 export interface BackButtonProps extends ButtonProps {
   customIcon?: JSX.Element;
+  goBack?: () => void;
+  onClickHandler?: "button" | "icon";
 }
 
 export const BackButton = (props: BackButtonProps) => {
+  const { goBack, onClickHandler = "icon" } = props;
+
   return (
     <Button
       icon={
         props.customIcon ? (
           props.customIcon
         ) : (
-          <ChevronLeftIcon className="w-4 h-4 mr-2" />
+          <ChevronLeftIcon
+            onClick={() => {
+              if (onClickHandler === "icon") {
+                goBack?.();
+              }
+            }}
+            className="w-4 h-4 mr-2"
+          />
         )
       }
       variant="outline"
+      onClick={() => {
+        if (onClickHandler === "button") {
+          goBack?.();
+        }
+      }}
       {...props}
     />
   );
