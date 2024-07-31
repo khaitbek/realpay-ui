@@ -1,10 +1,7 @@
 // import "@hayitbek/realpay-tailwind-config/src/global.css";
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <RootProvider>
-          {children}
-          </RootProvider>
-        </body>
+      <body>
+        <RootProvider>{children}</RootProvider>
+      </body>
     </html>
   );
 }
