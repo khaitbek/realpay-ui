@@ -11,17 +11,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/70 ring-primary",
+          "bg-primary text-primary-foreground hover:bg-primary/70 focus-visible:ring-primary",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive",
         outline:
-          "border border-slate-200 bg-white hover:bg-slate-100 ring-slate-900 hover:text-slate-900 dark:border-input dark:bg-background dark:hover:bg-accent dark:hover:text-accent-foreground ring-accent",
+          "border border-slate-200 bg-white hover:bg-slate-100 ring-slate-900 hover:text-slate-900 focus-visible:ring-slate-900 dark:border-input dark:bg-background dark:hover:bg-accent dark:hover:text-accent-foreground ring-accent",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 ring-secondary",
-        ghost: "hover:bg-accent hover:text-accent-foreground ring-accent",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 focus-visible:ring-secondary",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground focus-visible:ring-accent",
         success:
-          "bg-success text-success-foreground ring-success hover:bg-success/90",
-        link: "text-primary underline-offset-4 hover:underline ring-primary",
+          "bg-success text-success-foreground focus-visible:ring-success hover:bg-success/90",
+        link: "text-primary underline-offset-4 hover:underline focus-visible:ring-primary",
       },
       size: {
         default: "h-10 px-4 py-2",
