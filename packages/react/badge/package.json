@@ -1,5 +1,5 @@
 {
-  "name": "@hayitbek/realpay-ui-badge",
+  "name": "@realpay-ui/badge",
   "version": "1.0.8",
   "exports": {
     ".": {

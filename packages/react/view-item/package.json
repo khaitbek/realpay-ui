@@ -1,5 +1,5 @@
 {
-  "name": "@hayitbek/realpay-ui-view-item",
+  "name": "@realpay-ui/view-item",
   "version": "1.0.3",
   "exports": {
     ".": {

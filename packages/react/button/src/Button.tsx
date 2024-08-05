@@ -1,8 +1,8 @@
 "use client";
 
-import { classnames as cn } from "@hayitbek/realpay-utils";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+import {classnames as cn} from "@hayitbek/realpay-utils";
+import {Slot} from "@radix-ui/react-slot";
+import {cva, type VariantProps} from "class-variance-authority";
 import * as React from "react";
 
 const buttonVariants = cva(
@@ -35,7 +35,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
 interface ButtonProps
@@ -61,7 +61,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       iconPosition = "left",
       ...props
     },
-    ref,
+    ref
   ) => {
     if (asChild) {
       return (
@@ -71,14 +71,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               children as React.ReactElement,
               (child: React.ReactElement) => {
                 return React.cloneElement(child, {
-                  className: cn(buttonVariants({ variant, size }), className),
+                  className: cn(buttonVariants({variant, size}), className),
                   children: (
                     <>
                       {isLoading && (
                         <Loader
                           className={cn(
                             "h-4 w-4 animate-spin",
-                            children && "mr-2",
+                            children && "mr-2"
                           )}
                         />
                       )}
@@ -88,7 +88,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                     </>
                   ),
                 });
-              },
+              }
             )}
           </>
         </Slot>
@@ -96,7 +96,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
     return (
       <button
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({variant, size, className}))}
         disabled={isLoading || disabled}
         ref={ref}
         {...props}
@@ -113,7 +113,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </>
       </button>
     );
-  },
+  }
 );
 Button.displayName = "Button";
 
@@ -137,5 +137,5 @@ const Loader = (props: React.ComponentProps<"svg">) => {
   );
 };
 
-export { Button, buttonVariants };
-export type { ButtonProps };
+export {Button, buttonVariants};
+export type {ButtonProps};

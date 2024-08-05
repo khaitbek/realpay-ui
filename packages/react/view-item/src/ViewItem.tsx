@@ -1,8 +1,10 @@
-import { useMemo } from "react";
-import type { ReactNode } from "react";
+"use client";
+
+import {useMemo} from "react";
+import type {ReactNode} from "react";
 
 // helpers
-import { classnames as cn } from "@hayitbek/realpay-utils";
+import {classnames as cn} from "@hayitbek/realpay-utils";
 
 // types
 export type ViewItemProps<T extends React.ElementType> = {
@@ -17,7 +19,7 @@ export type ViewItemProps<T extends React.ElementType> = {
 } & Omit<React.ComponentProps<T>, "as">;
 
 export const ViewItem = <T extends React.ElementType>(
-  props: ViewItemProps<T>,
+  props: ViewItemProps<T>
 ) => {
   const {
     label,
@@ -42,7 +44,7 @@ export const ViewItem = <T extends React.ElementType>(
       className={cn(
         "flex items-center justify-between py-2",
         !isLastElement && "border-b border-[#F4F4F4]",
-        containerClassname,
+        containerClassname
       )}
     >
       <p className={cn("text-[#868686] text-sm leading-4", labelClassname)}>
@@ -51,7 +53,7 @@ export const ViewItem = <T extends React.ElementType>(
       <p
         className={cn(
           "text-black font-medium text-sm w-1/2 text-end break-all",
-          valueClassname,
+          valueClassname
         )}
       >
         {validateValue}

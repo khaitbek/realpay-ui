@@ -1,5 +1,5 @@
 {
-  "name": "@hayitbek/realpay-ui-dialog",
+  "name": "@realpay-ui/dialog",
   "version": "1.2.1",
   "exports": {
     ".": {

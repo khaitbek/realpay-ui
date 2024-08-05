@@ -1,4 +1,4 @@
-import { config } from "@hayitbek/realpay-tailwind-config";
+import { config } from "@realpay-tailwind-config";
 import twTypographyPlugin from "@tailwindcss/typography";
 import { createPreset } from "fumadocs-ui/tailwind-plugin";
 

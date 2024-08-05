@@ -1,5 +1,5 @@
 {
-    "name": "@hayitbek/realpay-shadcn-config",
+    "name": "@realpay-shadcn-config",
     "version": "1.0.1",
     "exports": {
         ".": {

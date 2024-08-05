@@ -3,7 +3,7 @@ title: Button
 description: Displays a button or a component that looks like a button
 ---
 
-import { Button, BackButton } from "@hayitbek/realpay-ui-button";
+import { BackButton, Button } from "@realpay-ui/button";
 import { Callout } from "fumadocs-ui/components/callout";
 import { User } from "lucide-react";
 import Link from "next/link";
@@ -18,7 +18,7 @@ import Link from "next/link";
 </Tab>
 <Tab value="code">
     ```tsx
-    import {Button} from "@hayitbek/realpay-ui-button"
+    import {Button} from "@realpay-ui/button"
 
     export const DemoButton = () => {
         return <Button>
@@ -35,23 +35,23 @@ import Link from "next/link";
 <Tabs items={["npm", "pnpm", "yarn", "bun"]}>
   <Tab value="npm">
 ```bash
-    npm install @hayitbek/realpay-ui-button
+    npm install @realpay-ui/button
 ```
   </Tab>
   <Tab value="pnpm">
   ```bash
-   pnpm install @hayitbek/realpay-ui-button
+   pnpm install @realpay-ui/button
    ```
 
   </Tab>
   <Tab value="yarn">
  ```bash
- yarn add @hayitbek/realpay-ui-button
+ yarn add @realpay-ui/button
  ```
   </Tab>
   <Tab value="bun">
   ```shell
-   bun add @hayitbek/realpay-ui-button
+   bun add @realpay-ui/button
    ```
   </Tab>
 </Tabs>
@@ -59,7 +59,7 @@ import Link from "next/link";
 ### Usage
 
 ```tsx
-import { Button } from "@hayitbek/realpay-ui-button";
+import { Button } from "@realpay-ui/button";
 ```
 
 ```tsx
@@ -73,7 +73,7 @@ You can use the buttonVariants helper to create a link that looks like a button.
 <Tabs items={["Preview","Code"]}>
 <Tab value="Code">
 ```tsx
-import {Button} from "@hayitbek/realpay-ui-button";
+import {Button} from "@realpay-ui/button";
 
 export const LinkThatLooksLikeAButton = () => {
     return <Button variant="link">
@@ -116,7 +116,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 </Tab>
 <Tab value="Code">
    ```tsx
-    import {Button} from "@hayitbek/realpay-ui-button"
+    import {Button} from "@realpay-ui/button"
 
     export const PrimaryButtonDemo = () => {
         return <Button>Primary button</Button>
@@ -133,7 +133,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 </Tab>
 <Tab value="Code">
 ```tsx
- import {Button} from "@hayitbek/realpay-ui-button"
+ import {Button} from "@realpay-ui/button"
 
  export const SecondaryButtonDemo = () => {
      return <Button>Secondary button</Button>
@@ -151,7 +151,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 </Tab>
 <Tab value="Code">
    ```tsx
-    import {Button} from "@hayitbek/realpay-ui-button"
+    import {Button} from "@realpay-ui/button"
 
     export const GhostButtonDemo = () => {
         return <Button>Ghost button</Button>
@@ -168,7 +168,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 </Tab>
 <Tab value="Code">
 ```tsx
- import {Button} from "@hayitbek/realpay-ui-button"
+ import {Button} from "@realpay-ui/button"
 
  export const GhostButtonDemo = () => {
      return <Button>Ghost button</Button>
@@ -186,7 +186,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 </Tab>
 <Tab value="Code">
    ```tsx
-    import {Button} from "@hayitbek/realpay-ui-button"
+    import {Button} from "@realpay-ui/button"
 
     export const LoadingButtonDemo = () => {
         return <Button isLoading>Loading button</Button>
@@ -206,7 +206,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 </Tab>
 <Tab value="Code">
 ```tsx
- import {Button} from "@hayitbek/realpay-ui-button"
+ import {Button} from "@realpay-ui/button"
  import {User} from "lucide-react"
 
  export const ButtonWithIconDemo = () => {

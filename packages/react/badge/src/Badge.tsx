@@ -1,7 +1,9 @@
-import { cva, type VariantProps } from "class-variance-authority";
+"use client";
+
+import {cva, type VariantProps} from "class-variance-authority";
 import * as React from "react";
 
-import { classnames as cn } from "@hayitbek/realpay-utils";
+import {classnames as cn} from "@hayitbek/realpay-utils";
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
@@ -30,7 +32,7 @@ const badgeVariants = cva(
       variant: "default",
       size: "small",
     },
-  },
+  }
 );
 
 export type BadgeProps<T extends React.ElementType> = Omit<
@@ -42,11 +44,11 @@ export type BadgeProps<T extends React.ElementType> = Omit<
   };
 
 const Badge = <T extends React.ElementType = "div">(props: BadgeProps<T>) => {
-  const { as, className, variant } = props;
+  const {as, className, variant} = props;
   const Comp = as ? as : "div";
   return (
-    <Comp className={cn(badgeVariants({ variant }), className)} {...props} />
+    <Comp className={cn(badgeVariants({variant}), className)} {...props} />
   );
 };
 
-export { Badge, badgeVariants };
+export {Badge, badgeVariants};

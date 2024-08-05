@@ -1,4 +1,4 @@
-// import "@hayitbek/realpay-tailwind-config/src/global.css";
+// import "@realpay-tailwind-config/src/global.css";
 import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
 import "./globals.css";

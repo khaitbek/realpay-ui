@@ -1,6 +1,7 @@
-import * as esbuild from 'esbuild';
-import { globSync } from 'glob';
-import * as tsup from 'tsup';
+import {exec} from "child_process";
+import * as esbuild from "esbuild";
+import {globSync} from "glob";
+import * as tsup from "tsup";
 
 async function build(path) {
   const file = `${path}/src/index.ts`;
@@ -8,14 +9,13 @@ async function build(path) {
 
   const esbuildConfig = {
     entryPoints: [file],
-    external: ['@radix-ui/*'],
-    packages: 'external',
+    external: ["@realpay-ui/*"],
+    packages: "external",
     bundle: true,
     sourcemap: true,
-    format: 'cjs',
-    target: 'es2022',
+    format: "cjs",
+    target: "es2022",
     outdir: dist,
-
   };
 
   await esbuild.build(esbuildConfig);
@@ -23,9 +23,8 @@ async function build(path) {
 
   await esbuild.build({
     ...esbuildConfig,
-    format: 'esm',
-    outExtension: { '.js': '.mjs' },
-    
+    format: "esm",
+    outExtension: {".js": ".mjs"},
   });
   console.log(`Built ${path}/dist/index.mjs`);
 
@@ -38,17 +37,23 @@ async function build(path) {
   //    It’s also harder to configure and esbuild docs are more thorough.
   await tsup.build({
     entry: [file],
-    format: ['cjs', 'esm'],
+    format: ["cjs", "esm"],
     // dts: true,
     outDir: dist,
     silent: true,
-    external: [/@radix-ui\/.+/],
+    external: [/@realpay-ui\/.+/],
     clean: true,
-    dts: true
-    
+    dts: true,
   });
   console.log(`Built ${path}/dist/index.d.ts`);
 }
 
-globSync('packages/react/*').forEach(build);
-globSync('packages/style-config/*').forEach(build)
+async function publish(path) {
+  console.log(path);
+  exec("npm publish");
+}
+
+globSync("packages/react/*").forEach(build);
+globSync("packages/style-config/*").forEach(build);
+globSync("packages/react/*").forEach(publish);
+globSync("packages/style-config/*").forEach(publish);
